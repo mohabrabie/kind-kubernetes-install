@@ -71,7 +71,7 @@ sudo systemctl status k3s-agent
 a screenshot of final output
 ![Screenshot](9.png)
 
-<h1>Part two allowing access only for specific IPs</h1>
+# Part two allowing access only for specific IPs
 
 Master IP: 192.168.223.138 <br>
 Node IP: 192.168.223.139 <br>
@@ -117,8 +117,12 @@ sudo ufw enable
 sudo ufw status verbose
 ```
 
-# failed try
+final output
+
+![Screenshot](10.png)
+
 # installing kubernetes cluster using Kind on Ubuntu 🚀
+failed try
 in this documentation I will show you the steps of creating a cluster using kind locally and allowing access for a specific IP to the APIServer and run commands on the Master
 
 ### Prerequisites
