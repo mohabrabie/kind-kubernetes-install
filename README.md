@@ -71,7 +71,51 @@ sudo systemctl status k3s-agent
 a screenshot of final output
 ![Screenshot](9.png)
 
+Part two allowing access only for specific IPs
 
+Master IP: 192.168.223.138
+Node IP: 192.168.223.139
+client IP: 192.168.223.140
+
+the changes will be on the master node where we host the apiserver
+
+1- reset all rules
+
+```
+sudo ufw reset
+```
+
+2- deny all incoming and allowing all outgoing
+
+```
+sudo ufw default deny incoming
+sudo ufw default allow outgoing
+```
+
+3- allow communication from worker node on the following ports
+
+```
+sudo ufw allow from 192.168.223.139 to any port 6443 proto tcp
+sudo ufw allow from 192.168.223.139 to any port 8472 proto udp
+sudo ufw allow from 192.168.223.139 to any port 10250 proto tcp
+```
+
+4- allow communication from client to the Master apiServer
+
+```
+sudo ufw allow from 192.168.223.140 to any port 6443 proto tcp
+```
+
+5-enable ufw
+
+```
+sudo ufw enable
+```
+6- check the status of ufw
+
+```
+sudo ufw status verbose
+```
 
 # installing kubernetes cluster using Kind on Ubuntu 🚀
 in this documentation I will show you the steps of creating a cluster using kind locally and allowing access for a specific IP to the APIServer and run commands on the Master
