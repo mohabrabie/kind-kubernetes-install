@@ -71,7 +71,7 @@ sudo systemctl status k3s-agent
 a screenshot of final output
 ![Screenshot](9.png)
 
-Part two allowing access only for specific IPs<br>
+<h1>Part two allowing access only for specific IPs</h1>
 
 Master IP: 192.168.223.138 <br>
 Node IP: 192.168.223.139 <br>
