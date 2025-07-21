@@ -1,17 +1,17 @@
 # installing kubernetes cluster using k3s on Ubuntu 🚀
 
-1.1 Update System Packages
+1.1 Update System Packages both (worker and master)
 ```
 sudo apt update && sudo apt upgrade -y
 ```
 
-1.2 Disable Swap Memory
+1.2 Disable Swap Memory both (worker and master)
 ```
 sudo swapoff -a
 sudo sed -i '/ swap / s/^\(.*\)$/#\1/g' /etc/fstab
 ```
 
-1.3 Configure Firewall
+1.3 Configure Firewall both (worker and master)
 ```
 # Allow SSH (if you're connecting via SSH)
 sudo ufw allow OpenSSH
